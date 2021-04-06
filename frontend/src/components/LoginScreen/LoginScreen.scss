@@ -24,7 +24,7 @@
   background-color: $cityBlue;
   border-radius: 8px;
   .login-text {
-    margin-top: 40px;
+    margin-top: 33px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 21px;
@@ -77,17 +77,23 @@
     border-radius: 5px;
     padding: 0 1.2em;
     border-color: $offWhite;
-    margin-bottom: 1em;
+    margin-bottom: 0em;
 
     &:focus {
       border-color: $cityBronze;
     }
   }
+
+  .login-screen-auth-input-error {
+    color: $offWhite;
+    font-size: 11px;
+    margin: 0.4em 0 1em;
+  }
 }
 
 .login-screen-auth-button-container {
   margin: 1em auto 0;
-  width: 40%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;

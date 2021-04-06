@@ -8,7 +8,26 @@ import LoginButton from './LoginButton';
 import cityLogo from '../../assets/SanJoseCityLogo.png';
 import CustomButton from './CustomButton';
 
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import authSchema from '../../schema/authSchema';
+
 function AdminLogin() {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    resolver: yupResolver(authSchema),
+  });
+
+  const onSubmit = (data) => {
+    console.log('Login Data: ', data);
+  };
+  const onError = (error) => {
+    console.warn('Login Error: ', error);
+  };
+
   const responseGoogle = (response) => {
     console.log(response);
   };
@@ -60,12 +79,30 @@ function AdminLogin() {
         </div>
 
         <div className="login-screen-auth-input-container">
-          <input type="text" placeholder="Enter username" className="login-screen-auth-input" />
-          <input type="text" placeholder="Enter password" className="login-screen-auth-input" />
+          <input
+            type="text"
+            placeholder="Enter username"
+            className="login-screen-auth-input"
+            {...register('username')}
+          />
+          <p className="login-screen-auth-input-error">{errors.username?.message}</p>
+          <input
+            type="text"
+            placeholder="Enter password"
+            className="login-screen-auth-input"
+            {...register('password')}
+          />
+          <p className="login-screen-auth-input-error">{errors.password?.message}</p>
         </div>
 
         <div className="login-screen-auth-button-container">
-          <CustomButton style={{ justifyContent: 'center' }}>Sign In</CustomButton>
+          <CustomButton
+            type="submit"
+            onClick={handleSubmit(onSubmit, onError)}
+            style={{ justifyContent: 'center' }}
+          >
+            Sign In
+          </CustomButton>
           <a href="#" className="login-screen-need-help-link">
             Need help signing in?
           </a>
