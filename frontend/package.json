@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.2.5",
+    "@hookform/resolvers": "^2.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -35,6 +36,7 @@
     "react-autocomplete": "^1.8.1",
     "react-dom": "^16.14.0",
     "react-google-login": "^5.1.22",
+    "react-hook-form": "^7.0.1",
     "react-i18next": "^11.8.5",
     "react-infinite-scroll-component": "^5.1.0",
     "react-microsoft-login": "^1.10.1",
@@ -44,7 +46,8 @@
     "react-sortable-hoc": "^1.11.0",
     "react-virtualized": "^9.22.2",
     "twilio": "^3.55.0",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "eslint": "^6.6.0",

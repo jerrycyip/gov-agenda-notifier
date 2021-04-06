@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginScreen.scss';
 
 import GoogleLogin from 'react-google-login';
@@ -12,7 +12,6 @@ function AdminLogin() {
   const responseGoogle = (response) => {
     console.log(response);
   };
-
   const responseMicrosoft = (err, data) => {
     console.log(err, data);
   };
@@ -60,7 +59,17 @@ function AdminLogin() {
           <hr />
         </div>
 
-        <CustomButton>Sign In</CustomButton>
+        <div className="login-screen-auth-input-container">
+          <input type="text" placeholder="Enter username" className="login-screen-auth-input" />
+          <input type="text" placeholder="Enter password" className="login-screen-auth-input" />
+        </div>
+
+        <div className="login-screen-auth-button-container">
+          <CustomButton style={{ justifyContent: 'center' }}>Sign In</CustomButton>
+          <a href="#" className="login-screen-need-help-link">
+            Need help signing in?
+          </a>
+        </div>
       </div>
     </div>
   );
