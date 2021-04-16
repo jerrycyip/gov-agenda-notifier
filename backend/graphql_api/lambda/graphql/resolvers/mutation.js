@@ -37,7 +37,7 @@ module.exports = (logger) => {
   };
 
   module.createMeeting = async (dbClient, args, context) => {
-    validator.validateAuthorization(context);
+    // validator.validateAuthorization(context);
     validator.validateCreateMeeting(args);
 
     let res;

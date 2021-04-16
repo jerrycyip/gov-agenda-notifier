@@ -87,19 +87,6 @@ function App() {
                 <EmailConfirmPage />
               </Route>
 
-              {/* <Route exact path="/participate/join">
-                  <ParticipatePage Component={ParticipateJoin} />
-                </Route>
-                <Route exact path="/participate/watch">
-                  <ParticipatePage Component={ParticipateWatch} />
-                </Route>
-                <Route exact path="/participate/comment">
-                  <ParticipatePage Component={ParticipateComment} />
-                </Route>
-                <Route exact path="/participate/request">
-                  <ParticipatePage Component={ParticipateRequest} />
-                </Route> */}
-
               <Route path={`${AdminPaths.EDIT_MEETING}/:id`}>
                 <AdminView
                   headerText={t('meeting.actions.edit-info.label')}
